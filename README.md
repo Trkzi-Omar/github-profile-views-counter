@@ -109,12 +109,12 @@ You can overwrite default `Profile views` text with your own label.
 
 ### Abbreviation
 You can overwrite showing the default behavior of showing the full number, with showing the abbreviated version.
-Setting `abbreviation` to `true` will abbreviate a large number by converting it into a more readable format with appropiate suffixes (none, "k", "M", "B","T").
+Setting `abbreviate` to `true` will abbreviate a large number by converting it into a more readable format with appropiate suffixes (**none**, "**k**", "**M**", "**B**" or "**T**").
 
 ![](https://img.shields.io/static/v1?label=PROFILE+VIEWS&message=12.3k&color=007ec6)
 
 ```markdown
-![](https://komarev.com/ghpvc/?username=your-github-username&abbreviation=true)
+![](https://komarev.com/ghpvc/?username=your-github-username&abbreviate=true)
 ```
 
 
