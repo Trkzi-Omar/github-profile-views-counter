@@ -39,8 +39,20 @@ final class CounterFileRepository implements
     public function getViewsCountByUsername(Username $username): int
     {
         $counterFilePath = $this->getCounterFilePath($username);
+        $count=file_exists($counterFilePath) ? (int) file_get_contents($counterFilePath) : 0
+            $abbreviate=true;
+        function abbreviateNumber($value) {
+            $suffixes = ["", "k", "M", "B", "T"];
+            $suffixNum = 0;
+            while ($value >= 1000) {
+                $value /= 1000;
+                $suffixNum++;
+            }
+            return round($value, 1) . $suffixes[$suffixNum];
+        }
 
-        return file_exists($counterFilePath) ? (int) file_get_contents($counterFilePath) : 0;
+
+        return $abbreviate ? $abbreviateNumber($count) : $count;
     }
 
     public function addViewByUsername(Username $username): void
